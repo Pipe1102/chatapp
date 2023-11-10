@@ -1,23 +1,30 @@
 import React from "react";
+import { faCog, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SideBarFooter = () => {
+interface Props {
+  openDialog: () => void;
+}
+const SideBarFooter = ({ openDialog }: Props) => {
   return (
     <div className="mt-auto flex w-full ">
-      <div className="flex w-full items-center justify-center gap-2  border ">
-        <img
-          src="/assets/icons/edit.svg"
-          alt="add contact"
-          width={20}
-          height={20}
-          className="w-[20px] h-[20px]"
-        />
-        <button className="border-none" />
+      <div className="flex w-full items-center justify-center gap-2 border">
+        <button
+          className="border-none"
+          onClick={() => {
+            openDialog();
+          }}
+        >
+          <FontAwesomeIcon
+            className="w-[20px] h-[20px] text-green-700"
+            icon={faPlus}
+          />
+        </button>
       </div>
       <div className="flex w-full items-center justify-center gap-2  border border-l-0 p-1">
-        <img
-          src="/assets/icons/account.svg"
-          alt="add contact"
-          className="w-[20px] h-[20px]"
+        <FontAwesomeIcon
+          className="w-[20px] h-[20px] text-green-700"
+          icon={faCog}
         />
         <button className="border-none" />
       </div>

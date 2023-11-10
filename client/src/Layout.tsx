@@ -1,15 +1,16 @@
+import { Outlet } from "react-router-dom";
 import LeftSideBar from "./components/LeftSideBar";
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout() {
   return (
-    <div className="flex">
-      <div style={{ display: "flex" }}>
+    <main className="relative">
+      <div className="flex h-screen">
         <LeftSideBar />
-        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-10 max-md:pb-14 sm:px-14">
-          <div className="mx-auto w-full">{children}</div>
+        <section className="flex pt-10 w-full flex-1">
+          <Outlet />
         </section>
       </div>
-    </div>
+    </main>
   );
 }
 
